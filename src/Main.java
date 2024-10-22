@@ -54,16 +54,19 @@ public class Main {
         }
         //Задача 5
         System.out.println("Задача 5");
-        int childAge = 7;
+        int childAge = 13;
+        boolean grownup = false;
         boolean littleChild = childAge < 5;
         boolean smallAndTeen = childAge >= 5 && childAge < 14;
-        boolean oldTeen = childAge >= 14 && childAge < 18;
+        boolean Teen = childAge >= 14 && childAge < 18;
         boolean grownUp = childAge > 18;
         if (littleChild) {
             System.out.println("Если возраст ребёнка равен " + childAge + ", то ему нельзя кататься на аттракционе.");
-        } else if (smallAndTeen) {
-            System.out.println("Если возраст ребёнка равен " + childAge + ", то ему можно кататься на аттракционе в сопровождении.");
-        } else if (oldTeen) {
+        } else if (smallAndTeen && grownup) {
+            System.out.println("Если возраст ребёнка равен " + childAge + ", то ему можно кататься на аттракционе в сопровождении взрослого.");
+        } else if (smallAndTeen && !grownup) {
+            System.out.println("Если возраст ребёнка равен " + childAge + ", но взрослого нет, ему нельзя кататься на аттракционе.");
+        } else if (Teen) {
             System.out.println("Если возраст ребёнка равен " + childAge + ", то ему можно кататься на аттракционе без сопровождения взрослого.");
         } else if (grownUp) {
             System.out.println("Если возраст ребёнка равен " + childAge + ", то он уже взрослый.");
